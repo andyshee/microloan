@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -6,29 +5,6 @@ import {
   Route,
   Link
 } from "react-router-dom"
-
-// Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
-import firebase from "firebase/app";
-import config from "./firebaseConfig"
-// Add the Firebase services that you want to use
-import "firebase/auth";
-import "firebase/firestore";
-import { HomePage } from './pages/HomePage';
-
-// Initialize Firebase
-firebase.initializeApp(config);
-
-var firebaseui = require('firebaseui');
-
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-ui.start('#firebaseui-auth-container', {
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  // Other config options...
-});
 
 function App() {
   return (
@@ -54,7 +30,6 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-
           <Route path="/profile">
             <Profile />
           </Route>
