@@ -17,7 +17,6 @@ export default class Feeditem extends React.Component{
                     <Card.Img src={myimg} ></Card.Img>
                 </Card.Body>
             </Card>
-            
         );
     }
 }

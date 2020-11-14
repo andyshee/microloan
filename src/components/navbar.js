@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Navbar, Button, Nav, Form, FormControl } from 'react-bootstrap';
+
+import logo from '../assets/evergreen.png';
 export default class MyNavbar extends Component {
     render() {
         return (
-            <Navbar bg="primary" variant="dark">
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar bg="success" variant="dark">
+                <Navbar.Brand href="#home"><img src={logo}></img></Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/profile">Profile</Nav.Link>
