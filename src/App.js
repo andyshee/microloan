@@ -15,6 +15,7 @@ import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
 import firebase from "firebase/app";
 import Profile from './pages/Profile'
+import VolunteerRequest from './pages/VolunteerRequest'
 
 export default class App extends Component {
 
@@ -58,6 +59,7 @@ export default class App extends Component {
         <MyNavbar user={this.state.user} signOut={this.handleSignOut} />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+        
         <Switch>
           <Route path="/profile">
             <Profile user={this.state.user} />
@@ -67,6 +69,9 @@ export default class App extends Component {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/createrequest">
+            <VolunteerRequest/>
           </Route>
           <Route path="/">
             <HomePage />
@@ -78,9 +83,12 @@ export default class App extends Component {
 
 }
 
+<<<<<<< HEAD
+=======
 // function Profile() {
 //   return <p> profile</p>
 // }
+>>>>>>> 60617e126fd6a737ab26066d64d111f7bd47b1fd
 
 function Messages() {
   return <p>messages</p>

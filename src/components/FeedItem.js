@@ -14,15 +14,16 @@ export default class FeedItem extends React.Component {
     }
 
     render() {
+        const p = this.props.post;
         return (
             <div style={{padding: '.75rem .75rem 0'}}>
-                <Card>
+                <Card className={this.props.isSelected ? 'green-border' : null}>
                     <Card.Header>Franklin Food Pantry</Card.Header>
                     <Card.Body className="less-pad-card">
                         <img src={myimg} alt="a" className="user" ></img>
                         <div className="supporting-text">
-                            <span className="helper-name">{this.props.post.name} &bull; Nov 16 &bull; {this.numToHrsString(this.props.post.activityLength)}</span>
-                            <span className="description">{this.props.post.description}</span>
+                            <span className="helper-name">{p.name} &bull; Nov 16 &bull; {this.numToHrsString(p.activityLength)}</span>
+                            <span className="description">{p.description}</span>
                         </div>
                     </Card.Body>
                 </Card>

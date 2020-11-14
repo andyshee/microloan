@@ -9,15 +9,15 @@ export default class DetailedPost extends React.Component{
     }
 
     render(){
+        const post = this.props.post;
+        if (!post) return (<h3>Please select a post.</h3>);
         return(
             <div>
-                <h1>Job Title </h1>
-                <h3>User Profile Name + Link to Page</h3>
-                <h5>Request Amount: $100</h5>
-                <div>Volunteer Task Full Description </div>
-                <Image width="80%" src={myimg}/>
+                <h1>{post.title}</h1>
+                <a href="/" className="username-linked"> {post.name} </a>
+                <div> {post.description} </div>
                 <Button variant="Link">Message Me</Button>
-                <Button variant="Link">Accept Job</Button>
+                <Button variant="Link">Sponsor Me</Button>
             </div>
         );
     }
