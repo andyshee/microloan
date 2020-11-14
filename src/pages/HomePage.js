@@ -16,10 +16,10 @@ export default class HomePage extends React.Component {
             <Row>
                 <Col xs={5}>
                     5
-          </Col>
+                </Col>
                 <Col xs={7}>
                     7
-          </Col>
+                </Col>
             </Row>
         </Container>;
     }
