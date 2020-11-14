@@ -19,10 +19,12 @@ export default class HomePage extends React.Component {
 
     componentDidMount() {
         setTimeout(() => {
-            api.get('openoffers').then(jobs => {
-                this.setState({posts: jobs.data.offers});
-            });
+            this.setState({posts: this.getFakePosts()})
         }, 300);
+
+        // api.get('openoffers').then(jobs => {
+        //     this.setState({posts: jobs.data.offers});
+        // });
     }
 
     getRealPosts() {

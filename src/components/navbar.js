@@ -21,7 +21,7 @@ export default class MyNavbar extends Component {
     render() {
         return (
             <Navbar bg="success" variant="dark">
-                <Navbar.Brand href="#home"><img style={{width:"40px"}} src={logo}></img></Navbar.Brand>
+                <Navbar.Brand href="#home"><img src={logo} className="circle-40"></img></Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/profile">Profile</Nav.Link>
