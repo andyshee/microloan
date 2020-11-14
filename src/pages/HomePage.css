@@ -1,5 +1,5 @@
 .home-container {
-    height: calc(100vh - 61px);
+    height: calc(100vh - 68px);
     width: 100vw;
     overflow: hidden;
 }
@@ -19,4 +19,5 @@
     width: 60%;
     padding: .5em 1em;
     vertical-align: top;
+    box-sizing: border-box;
 }

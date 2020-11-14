@@ -14,6 +14,8 @@ import Login from './pages/login'
 import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
 import firebase from "firebase/app";
+import Profile from './pages/Profile'
+import VolunteerRequest from './pages/VolunteerRequest';
 import Messages from './pages/Messages';
 
 export default class App extends Component {
@@ -39,7 +41,7 @@ export default class App extends Component {
       }
     })
     //import api
-    // make your call:
+    //make your call:
     const promise = api.get('/messages');
     // upon a successful call, run a callback
     promise.then((obj) => {
@@ -66,6 +68,7 @@ export default class App extends Component {
         <MyNavbar user={this.state.user} signOut={this.handleSignOut} />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+
         <Switch>
           <Route path="/profile">
             <Profile user={this.state.user} />
@@ -75,6 +78,9 @@ export default class App extends Component {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/createrequest">
+            <VolunteerRequest />
           </Route>
           <Route path="/">
             <HomePage />
@@ -86,7 +92,7 @@ export default class App extends Component {
 
 }
 
-function Profile() {
-  return <p> profile</p>
-}
+// function Profile() {
+//   return <p> profile</p>
+// }
 

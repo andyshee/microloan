@@ -26,7 +26,7 @@ export default class Messages extends React.Component {
                     ]
                 },
                 {
-                    name: 'Mark',
+                    name: 'Dan',
                     messages: [
                         {
                             sent: true,
@@ -45,12 +45,13 @@ export default class Messages extends React.Component {
                 }
 
             ],
-            selected: null
+            selected: 0
         }
 
         this.renderChats = this.renderChats.bind(this);
         this.renderMsgs = this.renderMsgs.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.renderName = this.renderName.bind(this);
     }
 
     handleClick = async (index) => {
@@ -80,7 +81,7 @@ export default class Messages extends React.Component {
             const msgs = chat.messages;
             console.log(msgs);
             return msgs.map((value, index) => {
-                return <div className={value.sent ? 'right' : 'left'} key={index}>
+                return <div className={value.sent ? 'right primary' : 'left primary'} key={index}>
                     {value.msg}
                 </div>
             })
@@ -88,6 +89,11 @@ export default class Messages extends React.Component {
         } else {
             return 'Select a message';
         }
+    }
+
+    renderName = () => {
+        if (this.state.selected == null) return '';
+        return this.state.chats[this.state.selected].name;
     }
 
     render() {
@@ -99,6 +105,7 @@ export default class Messages extends React.Component {
                     </ListGroup>
                 </div>
                 <div className="chat">
+                    <h1>{this.renderName()}</h1>
                     {this.renderMsgs()}
                 </div>
             </div>

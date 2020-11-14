@@ -10,6 +10,11 @@
     padding: 1rem .75rem;
 }
 
+.card.green-border {
+    border-color: #28a745;
+    border-width: 3px;
+}
+
 .supporting-text {
     width: calc(100% - 80px);
     display: inline-block;

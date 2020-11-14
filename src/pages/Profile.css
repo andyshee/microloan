@@ -1,0 +1,41 @@
+.grid-container{
+    display:grid;
+    outline: 2px red;
+    
+
+}
+
+.header-box{
+    padding-top: 13 px;
+    padding-bottom: 8 px;
+    display: inline;
+}
+
+.profile-pic{
+    display: inline;
+}
+
+.name-box{
+    display: inline;
+    outline: 2px red;
+}
+
+.body-box{
+
+}
+
+.sub-box{
+
+}
+
+.sponsorships{
+
+}
+
+.requests{
+
+}
+
+.account-info{
+
+}
