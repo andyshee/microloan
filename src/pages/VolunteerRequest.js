@@ -9,8 +9,7 @@ export default class VolunteerRequest extends React.Component{
 
     render(){
         return(
-            <div >
-                <div className ="form-box">
+            <div className="form-box">
                 <Form>
                     <Form.Group controlId="formPostTitle">
                         <Form.Label>Post Title</Form.Label>
@@ -24,8 +23,7 @@ export default class VolunteerRequest extends React.Component{
                     <Form.Group controlId="formImage"> 
                         <Form.File id="Image" label="Pictures associated with request"/>
                     </Form.Group>
-                </Form>
-                </div>
+                </Form> 
             </div>
         );
     }
