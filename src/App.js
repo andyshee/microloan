@@ -38,9 +38,10 @@ export default class App extends Component {
         console.log('user is not signed in');
       }
     })
-    // api.get('').then(*function to handle success*).catch(*function to handle error catching*)
-    var openjobs = api.get('openoffers');
-    console.log(openjobs);
+
+    // //working get request
+    // var openjobs;
+    // openjobs = api.get('openoffers').then(jobs => console.log(jobs));
   }
   handleSignOut() {
     firebase.auth().signOut().then(() => {

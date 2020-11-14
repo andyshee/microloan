@@ -3,6 +3,8 @@ import Listitem from '../components/listitem'
 import Detaileditem from '../components/DetailedPost'
 import './HomePage.css'
 import FeedItem from '../components/FeedItem';
+import api from '../services/api/api';
+
 
 export default class HomePage extends React.Component {
     constructor(props) {
@@ -15,8 +17,17 @@ export default class HomePage extends React.Component {
 
     componentDidMount() {
         setTimeout(() => {
-            this.setState({posts: this.getFakePosts()});
+            api.get('openoffers').then(jobs => {
+                this.setState({posts: jobs.data.offers});
+            });
         }, 300);
+    }
+
+    getRealPosts() {
+        //working get request
+        var openjobs;
+        openjobs = api.get('openoffers').then(jobs => {
+            return jobs.data.offers});
     }
 
     getFakePosts() {
