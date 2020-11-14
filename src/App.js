@@ -75,12 +75,9 @@ export default class App extends Component {
 
 }
 
-<<<<<<< HEAD
-=======
-function Profile() {
-  return <p> profile</p>
-}
->>>>>>> e2fcd64bca543f27e18534a91b7196cc58fc42ee
+// function Profile() {
+//   return <p> profile</p>
+// }
 
 function Messages() {
   return <p>messages</p>
