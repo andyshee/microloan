@@ -1,7 +1,10 @@
 import React from 'react';
-import Card from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
+import {Image} from 'react-bootstrap'
+import myimg from "../assets/IMG_4243c.jpg"
+import './FeedItem.css'
 
-export default class Feeditem extends React.Component{
+export default class FeedItem extends React.Component{
     constructor(props){
         super(props)
     }
@@ -9,10 +12,10 @@ export default class Feeditem extends React.Component{
     render(){
         return (
             <Card>
-                <Card.Header> Job Title</Card.Header>
+                <Card.Header>Franklin Food Pantry</Card.Header>
                 <Card.Body>
-                    <Card.Text> Job Description </Card.Text>
-                    <Card.Img src= "IMG_4243c.jpg"></Card.Img>
+                    <Card.Text> Amount + beginning description</Card.Text>
+                    <img src={myimg} alt="a" className="user" ></img>
                 </Card.Body>
             </Card>
         );

@@ -1,0 +1,22 @@
+.home-container {
+    height: calc(100vh - 61px);
+    width: 100vw;
+    overflow: hidden;
+}
+
+.sidebar {
+    overflow-y: auto;
+    display: inline-block;
+    max-height: 100%;
+    width: 40%;
+    vertical-align: top;
+}
+
+.maincontent {
+    overflow-y: auto;
+    display: inline-block;
+    max-height: 100%;
+    width: 60%;
+    padding: .5em 1em;
+    vertical-align: top;
+}
