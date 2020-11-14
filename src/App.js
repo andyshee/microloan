@@ -1,10 +1,12 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom"
+import HomePage from './pages/HomePage';
 
 //page imports
 import Login from './pages/login'
@@ -44,7 +46,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/">
-            <Home />
+            <HomePage />
           </Route>
         </Switch>
       </div>
