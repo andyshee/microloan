@@ -15,6 +15,8 @@ import config from "./firebaseConfig"
 import "firebase/auth";
 import "firebase/firestore";
 
+import MyNavbar from './components/navbar';
+
 // Initialize Firebase
 firebase.initializeApp(config);
 
@@ -32,6 +34,7 @@ ui.start('#firebaseui-auth-container', {
 function App() {
   return (
     <Router>
+      <MyNavbar />
       <div>
         <nav>
           <ul>
