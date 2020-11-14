@@ -23,6 +23,8 @@ export default class App extends Component {
     this.state = {
       user: null,
     };
+
+    this.handleSignOut = this.handleSignOut.bind(this);
   }
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
@@ -35,18 +37,26 @@ export default class App extends Component {
         console.log('user is not signed in');
       }
     })
+    // api.get('').then(*function to handle success*).catch(*function to handle error catching*)
+  }
+  handleSignOut() {
+    firebase.auth().signOut().then(() => {
+      console.log('Sign out successful');
+    }).catch(err => {
+      console.log(err);
+    })
   }
 
   render() {
-    if (this.state.user) return <Profile />
+    // if (this.state.user) return <Profile />
     return (
       <Router>
-        <MyNavbar />
+        <MyNavbar user={this.state.user} signOut={this.handleSignOut} />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/profile">
-            <Profile />
+            <Profile user={this.state.user} />
           </Route>
           <Route path="/messages">
             <Messages />
@@ -62,10 +72,6 @@ export default class App extends Component {
     );
   }
 
-}
-
-function Profile() {
-  return <p>profile</p>;
 }
 
 function Messages() {
