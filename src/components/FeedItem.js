@@ -16,7 +16,7 @@ export default class FeedItem extends React.Component {
                 <Card.Body className="less-pad-card">
                     <img src={myimg} alt="a" className="user" ></img>
                     <div className="supporting-text">
-                        <span className="helper-name">John Doe &bull; 4 hrs</span>
+                        <span className="helper-name">John Doe &bull; Nov 16 &bull; 4 hrs</span>
                         <span className="description">I plan on going to the franklin food pantry Sunday morning to help out.</span>
                     </div>
                 </Card.Body>
