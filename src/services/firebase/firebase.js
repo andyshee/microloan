@@ -11,5 +11,3 @@ import "firebase/firestore";
 firebase.initializeApp(config);
 
 export var firebaseui = require('firebaseui');
-
-
