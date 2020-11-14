@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Button, Nav, Form, FormControl } from 'react-bootstrap';
 
-import logo from '../assets/evergreen.png';
+import logo from '../assets/tree.jpg';
 export default class MyNavbar extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +21,7 @@ export default class MyNavbar extends Component {
     render() {
         return (
             <Navbar bg="success" variant="dark">
-                <Navbar.Brand href="#home"><img src={logo}></img></Navbar.Brand>
+                <Navbar.Brand href="#home"><img style={{width:"40px"}} src={logo}></img></Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/profile">Profile</Nav.Link>

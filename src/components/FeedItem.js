@@ -8,16 +8,22 @@ export default class FeedItem extends React.Component {
         super(props)
     }
 
+    numToHrsString(num) {
+        const newNum = (Math.round(num * 4) / 4);
+        return newNum.toString() + ' hrs';
+    }
+
     render() {
+        const p = this.props.post;
         return (
             <div style={{padding: '.75rem .75rem 0'}}>
-                <Card>
+                <Card className={this.props.isSelected ? 'green-border' : null}>
                     <Card.Header>Franklin Food Pantry</Card.Header>
                     <Card.Body className="less-pad-card">
                         <img src={myimg} alt="a" className="user" ></img>
                         <div className="supporting-text">
-                            <span className="helper-name">{this.props.post.name} &bull; Nov 16 &bull; 4 hrs</span>
-                            <span className="description">I plan on going to the franklin food pantry Sunday morning to help out.</span>
+                            <span className="helper-name">{p.name} &bull; Nov 16 &bull; {this.numToHrsString(p.activityLength)}</span>
+                            <span className="description">{p.description}</span>
                         </div>
                     </Card.Body>
                 </Card>

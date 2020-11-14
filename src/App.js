@@ -40,6 +40,8 @@ export default class App extends Component {
       }
     })
     // api.get('').then(*function to handle success*).catch(*function to handle error catching*)
+    var openjobs = api.get('openoffers');
+    console.log(openjobs);
   }
   handleSignOut() {
     firebase.auth().signOut().then(() => {
@@ -80,6 +82,12 @@ export default class App extends Component {
 
 }
 
+<<<<<<< HEAD
+=======
+// function Profile() {
+//   return <p> profile</p>
+// }
+>>>>>>> 60617e126fd6a737ab26066d64d111f7bd47b1fd
 
 function Messages() {
   return <p>messages</p>

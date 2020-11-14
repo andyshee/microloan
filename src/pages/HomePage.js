@@ -1,6 +1,6 @@
 import React from 'react';
 import Listitem from '../components/listitem'
-import Detaileditem from '../components/detaileditem'
+import Detaileditem from '../components/DetailedPost'
 import './HomePage.css'
 import FeedItem from '../components/FeedItem';
 
@@ -8,8 +8,11 @@ export default class HomePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: []
+            posts: [],
+            selectedPost: null
         }
+
+        this.setPost = this.setPost.bind(this);
     }
 
     componentDidMount() {
@@ -34,12 +37,22 @@ export default class HomePage extends React.Component {
         return posts;
     }
 
+    setPost(post) {
+        this.setState({selectedPost: post});
+    }
+
     render() {
+        const selectedId = this.state.selectedPost && this.state.selectedPost.id;
+
         return <div className="home-container">
             <div className="sidebar scrolly">
-                {this.state.posts.map(p => <FeedItem post={p} />)}
+                {this.state.posts.map(p => 
+                    <div key={p.id} onClick={() => this.setPost(p)} style={{cursor: 'pointer'}}>
+                        <FeedItem post={p} isSelected={p.id === selectedId} />
+                    </div>
+                )}
             </div>
-            <div className="maincontent scrolly"><Detaileditem /></div>
+            <div className="maincontent scrolly"><Detaileditem post={this.state.selectedPost} /></div>
         </div>;
     }
 }
