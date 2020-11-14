@@ -14,6 +14,7 @@ import Login from './pages/login'
 import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
 import firebase from "firebase/app";
+import Messages from './pages/Messages';
 
 export default class App extends Component {
 
@@ -37,7 +38,18 @@ export default class App extends Component {
         console.log('user is not signed in');
       }
     })
-    // api.get('').then(*function to handle success*).catch(*function to handle error catching*)
+    //import api
+    // make your call:
+    const promise = api.get('/messages');
+    // upon a successful call, run a callback
+    promise.then((obj) => {
+      console.log(obj.data);
+      console.log('success')
+    })
+    promise.catch(err => {
+      console.log(err);
+    })
+
   }
   handleSignOut() {
     firebase.auth().signOut().then(() => {
@@ -76,9 +88,5 @@ export default class App extends Component {
 
 function Profile() {
   return <p> profile</p>
-}
-
-function Messages() {
-  return <p>messages</p>
 }
 
