@@ -9,10 +9,23 @@ export default class Listitem extends React.Component{
 
     render(){
         return(
-            <ListGroup>
-                <ListGroup.item>sup</ListGroup.item>
-              
-            </ListGroup>
+            <div style={{width: "25%"}}>
+                <ListGroup>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>
+                    <ListGroup.Item><Feeditem/></ListGroup.Item>        
+                </ListGroup>
+            </div>
+            
         )
     }
 }

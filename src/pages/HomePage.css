@@ -1,0 +1,5 @@
+.sidebar{
+    overflow:scroll;
+    display: inline-block;
+    background-color: aqua;
+}

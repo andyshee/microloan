@@ -10,12 +10,11 @@ export default class Feeditem extends React.Component{
 
     render(){
         return (
-            <Card>
+            <Card >
                 <Card.Header> Job Title</Card.Header>
                 <Card.Body>
                     <Card.Text> Amount + beginning description</Card.Text>
-                    <Card.Img src={myimg}></Card.Img>
-                    <Image src={"../assets/IMG_4243c.jpg"}/>
+                    <Card.Img src={myimg} ></Card.Img>
                 </Card.Body>
             </Card>
             
