@@ -27,7 +27,10 @@ export default class App extends Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log('user is signed in');
+        this.setState({
+          user: user
+        })
+        console.log(this.state);
       } else {
         console.log('user is not signed in');
       }
