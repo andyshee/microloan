@@ -32,7 +32,9 @@ function Login() {
                 <h2>EverGreen is a platform to earn money by doing community service.</h2>
                 <h2>Community members can post tasks that need done in their neighborhood in exchange for rewards.</h2>
             </div>
-            <div id="firebaseui-auth-container">
+            <div id="login-button-container">
+                <div id="firebaseui-auth-container">
+                </div>
             </div>
         </div>
     </div>
