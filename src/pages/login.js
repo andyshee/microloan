@@ -27,10 +27,10 @@ function Login() {
   return (
     <div className="App">
         <div className = "login-container"> 
-            <h1>Community Good. Simplified.</h1>
+            <h1 className="white">Community Good. Simplified.</h1>
             <div className="platform-info">
-                <h2>EverGreen is a platform to earn money by doing community service.</h2>
-                <h2>Community members can post tasks that need done in their neighborhood in exchange for rewards.</h2>
+                <h2 className="white">EverGreen is a platform to earn money by doing community service.</h2>
+                <h2 className="white">Community members can post tasks that need done in their neighborhood in exchange for rewards.</h2>
             </div>
             <div id="login-button-container">
                 <div id="firebaseui-auth-container">
