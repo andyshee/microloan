@@ -36,7 +36,11 @@ export default class VolunteerRequest extends React.Component{
                     <Form.Group controlId="formImage"> 
                         <Form.File id="Image" label="Pictures associated with request"/>
                     </Form.Group>
+<<<<<<< HEAD
                     <Button onClick={(e)=> {console.log(e)}} type="submit"> Submit</Button>
+=======
+                    <Button type="submit"> Submit</Button>
+>>>>>>> 4e93b54a30d73d1e3e0fcb0596690b6ad02c54b5
                 </Form> 
             </div>
 
