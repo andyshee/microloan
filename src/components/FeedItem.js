@@ -18,7 +18,7 @@ export default class FeedItem extends React.Component {
         return (
             <div style={{padding: '.75rem .75rem 0'}}>
                 <Card className={this.props.isSelected ? 'green-border' : null}>
-                    <Card.Header>Franklin Food Pantry</Card.Header>
+                    <Card.Header> {p.title} </Card.Header>
                     <Card.Body className="less-pad-card">
                         <img src={myimg} alt="a" className="user" ></img>
                         <div className="supporting-text">
