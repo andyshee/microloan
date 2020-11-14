@@ -7,9 +7,18 @@ export default class VolunteerRequest extends React.Component{
         super(props)
     }
 
-    
+    formData = {
+        title: "",
+        description: ""
+    }
+
+
+    handleSubmit = (e) => {
+        console.log(e)
+    }
 
     
+
 
     render(){
         return(
@@ -18,7 +27,7 @@ export default class VolunteerRequest extends React.Component{
                     <Form.Group controlId="formPostTitle">
                         <Form.Label>Post Title</Form.Label>
                         <Form.Control as="textarea" rows={1}/>
-                        <Form.Text>Title here</Form.Text>
+                        <Form.Text >Title here</Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formDescription">
                         <Form.Label>Job Description</Form.Label>
@@ -27,7 +36,7 @@ export default class VolunteerRequest extends React.Component{
                     <Form.Group controlId="formImage"> 
                         <Form.File id="Image" label="Pictures associated with request"/>
                     </Form.Group>
-                    <Button onClick={handleSubmit} type="submit"> Submit</Button>
+                    <Button onClick={(e)=> {console.log(e)}} type="submit"> Submit</Button>
                 </Form> 
             </div>
 

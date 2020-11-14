@@ -12,7 +12,6 @@ export default class Profile extends React.Component{
         console.log(props.user);
         super(props);
         this.state = {
-
         }
     }
 
