@@ -6,6 +6,8 @@ import profpic from '../assets/profile-pic-icon-square.png'
 
 export default class Profile extends React.Component{
     constructor(props){
+        console.log(props.user);
+        console.log(props.user);
         super(props);
         this.state = {
 
@@ -14,14 +16,14 @@ export default class Profile extends React.Component{
 
     render(){
         return (
-            <div>
+            <div className= "grid-container">
                 <div className="header-box">
                     <div className= "profile-pic">
                         <Image src={profpic} roundedCircle/>
                     </div>
-                    <div className = "Name-box">
+                    <div className = "name-box">
                         <h1>Connor "Sexy" Boham</h1>
-                        <h5><i>EnvelopeFill</i>CBoHAM@stud.net</h5>
+                        <h5>CBoHAM@stud.net</h5>
                     </div>
                 </div>
                 <div className= "body-box">
