@@ -12,7 +12,7 @@ export default class FeedItem extends React.Component{
     render(){
         return (
             <Card>
-                <Card.Header> Job Title</Card.Header>
+                <Card.Header>Franklin Food Pantry</Card.Header>
                 <Card.Body>
                     <Card.Text> Amount + beginning description</Card.Text>
                     <img src={myimg} alt="a" className="user" ></img>

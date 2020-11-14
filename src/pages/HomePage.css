@@ -5,16 +5,18 @@
 }
 
 .sidebar {
-    overflow-y: scroll;
+    overflow-y: auto;
     display: inline-block;
     max-height: 100%;
-    width: 33%;
+    width: 40%;
+    vertical-align: top;
 }
 
 .maincontent {
-    overflow-y: scroll;
+    overflow-y: auto;
     display: inline-block;
     max-height: 100%;
-    width: 67%;
+    width: 60%;
     padding: .5em 1em;
+    vertical-align: top;
 }
