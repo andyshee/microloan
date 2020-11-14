@@ -6,6 +6,10 @@ import {
   Link
 } from "react-router-dom"
 
+//page imports
+import Login from './pages/login'
+import Home from './pages/HomePage'
+
 function App() {
   return (
     <Router>
@@ -54,14 +58,6 @@ function Profile() {
 
 function Messages() {
   return <p>messages</p>
-}
-
-function Login() {
-  return <p>login</p>
-}
-
-function Home() {
-  return <p>homepage!</p>
 }
 
 export default App;
