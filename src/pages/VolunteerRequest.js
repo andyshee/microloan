@@ -1,11 +1,15 @@
 import React from 'react'
-import {Form} from 'react-bootstrap'
+import {Button, Form} from 'react-bootstrap'
 import './VolunteerRequest.css'
 
 export default class VolunteerRequest extends React.Component{
     constructor(props){
         super(props)
     }
+
+    
+
+    
 
     render(){
         return(
@@ -23,8 +27,10 @@ export default class VolunteerRequest extends React.Component{
                     <Form.Group controlId="formImage"> 
                         <Form.File id="Image" label="Pictures associated with request"/>
                     </Form.Group>
+                    <Button onClick={handleSubmit} type="submit"> Submit</Button>
                 </Form> 
             </div>
+
         );
     }
 }

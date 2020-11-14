@@ -43,7 +43,12 @@ export default class App extends Component {
     // //working get request
     // var openjobs;
     // openjobs = api.get('openoffers').then(jobs => console.log(jobs));
+
+    api.post('/submit-job-form', {name: "Chris", lname: "Piserchia"})
+      .then( (res) => console.log(res))
+      .catch( (err) => console.log(err))
   }
+
   handleSignOut() {
     firebase.auth().signOut().then(() => {
       console.log('Sign out successful');
@@ -70,7 +75,7 @@ export default class App extends Component {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/createrequest">
+          <Route path="/create-job">
             <VolunteerRequest/>
           </Route>
           <Route path="/">
@@ -83,9 +88,6 @@ export default class App extends Component {
 
 }
 
-// function Profile() {
-//   return <p> profile</p>
-// }
 
 function Messages() {
   return <p>messages</p>
