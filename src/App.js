@@ -1,4 +1,5 @@
 import './App.css';
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -7,34 +8,57 @@ import {
   Link
 } from "react-router-dom"
 import HomePage from './pages/HomePage';
-
+import api from './services/api/api';
 //page imports
 import Login from './pages/login'
 import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
+import firebase from "firebase/app";
 
-function App() {
-  return (
-    <Router>
-      <MyNavbar />
-      {/* A <Switch> looks through its children <Route>s and
+export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user: null,
+    };
+  }
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        console.log('user is signed in');
+      } else {
+        console.log('user is not signed in');
+      }
+    })
+  }
+
+  render() {
+    if (this.state.user) return <Profile />
+    return (
+      <Router>
+        <MyNavbar />
+        {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-      <Switch>
-        <Route path="/profile">
-          <Profile />
-        </Route>
-        <Route path="/messages">
-          <Messages />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/">
-          <HomePage />
-        </Route>
-      </Switch>
-    </Router>
-  );
+        <Switch>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/messages">
+            <Messages />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router >
+    );
+  }
+
 }
 
 function Profile() {
@@ -45,4 +69,3 @@ function Messages() {
   return <p>messages</p>
 }
 
-export default App;
