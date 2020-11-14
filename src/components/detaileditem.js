@@ -10,12 +10,12 @@ export default class Detaileditem extends React.Component{
 
     render(){
         return(
-            <div style={{width: "75%"}}>
+            <div >
                 <h1>Job Title </h1>
                 <h3>User Profile Name + Link to Page</h3>
                 <h5>Request Amount: $100</h5>
                 <div>Volunteer Task Full Description </div>
-                <Image src={myimg}/>
+                <Image width="80%" src={myimg}/>
                 <Button variant="Link">Message Me</Button>
                 <Button variant="Link">Accept Job</Button>
             </div>

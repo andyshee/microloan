@@ -16,10 +16,20 @@ export default class HomePage extends React.Component {
     render() {
         return <div>
             <h1>Homepage</h1>
-            <div class="sidebar">
-                <div><Listitem/></div>
-                <div><Detaileditem/></div>
+            <div >
+                <div class = "sidebar"><Listitem/></div>
+                <div class = "maincontent"><Detaileditem/></div>
             </div>
         </div>;
     }
 }
+
+
+
+<div>
+<h1>Homepage</h1>
+<div >
+    <div class = "sidebar"><Listitem/></div>
+    <div><Detaileditem/></div>
+</div>
+</div>;
