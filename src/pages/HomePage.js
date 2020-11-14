@@ -11,6 +11,8 @@ export default class HomePage extends React.Component {
             posts: [],
             selectedPost: null
         }
+
+        this.setPost = this.setPost.bind(this);
     }
 
     componentDidMount() {
@@ -35,11 +37,19 @@ export default class HomePage extends React.Component {
         return posts;
     }
 
+    setPost(post) {
+        this.setState({selectedPost: post});
+    }
+
     render() {
+        const selectedId = this.state.selectedPost && this.state.selectedPost.id;
+
         return <div className="home-container">
             <div className="sidebar scrolly">
                 {this.state.posts.map(p => 
-                    <FeedItem key={p.id} post={p} onClick={() => this.setState({selectedPost: p})} />
+                    <div key={p.id} onClick={() => this.setPost(p)} style={{cursor: 'pointer'}}>
+                        <FeedItem post={p} isSelected={p.id === selectedId} />
+                    </div>
                 )}
             </div>
             <div className="maincontent scrolly"><Detaileditem post={this.state.selectedPost} /></div>
