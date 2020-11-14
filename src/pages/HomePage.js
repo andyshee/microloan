@@ -15,8 +15,8 @@ export default class HomePage extends React.Component {
     }
     render() {
         return <div className="home-container">
-            <div className="sidebar"><Listitem /></div>
-            <div className="maincontent"><Detaileditem /></div>
+            <div className="sidebar scrolly"><Listitem /></div>
+            <div className="maincontent scrolly"><Detaileditem /></div>
         </div>;
     }
 }

@@ -1,5 +1,5 @@
 .home-container {
-    height: 90vh;
+    height: calc(100vh - 61px);
     width: 100vw;
     overflow: hidden;
 }
@@ -16,4 +16,5 @@
     display: inline-block;
     max-height: 100%;
     width: 67%;
+    padding: .5em 1em;
 }
