@@ -8,44 +8,31 @@ import {
 } from "react-router-dom"
 import HomePage from './pages/HomePage';
 
+//page imports
+import Login from './pages/login'
+import Home from './pages/HomePage'
+import MyNavbar from './components/navbar';
+
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-            <li>
-              <Link to="/messages">Messages</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
+      <MyNavbar />
+      {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/messages">
-            <Messages />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/">
-            <HomePage />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+        <Route path="/messages">
+          <Messages />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/">
+          <HomePage />
+        </Route>
+      </Switch>
     </Router>
   );
 }
@@ -56,10 +43,6 @@ function Profile() {
 
 function Messages() {
   return <p>messages</p>
-}
-
-function Login() {
-  return <p>login</p>
 }
 
 export default App;
