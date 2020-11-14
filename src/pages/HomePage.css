@@ -2,4 +2,13 @@
     overflow:scroll;
     display: inline-block;
     background-color: aqua;
+    width: 20%;
+    float: left;
 }
+
+.maincontent{
+    position: fixed;
+}
+
+
+

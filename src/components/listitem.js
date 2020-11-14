@@ -9,7 +9,7 @@ export default class Listitem extends React.Component{
 
     render(){
         return(
-            <div style={{width: "25%"}}>
+           
                 <ListGroup>
                     <ListGroup.Item><Feeditem/></ListGroup.Item>
                     <ListGroup.Item><Feeditem/></ListGroup.Item>
@@ -24,7 +24,6 @@ export default class Listitem extends React.Component{
                     <ListGroup.Item><Feeditem/></ListGroup.Item>
                     <ListGroup.Item><Feeditem/></ListGroup.Item>        
                 </ListGroup>
-            </div>
             
         )
     }
