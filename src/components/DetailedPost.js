@@ -3,14 +3,14 @@ import {Button} from 'react-bootstrap'
 import {Image} from 'react-bootstrap'
 import myimg from "../assets/IMG_4243c.jpg"
 
-export default class Detaileditem extends React.Component{
+export default class DetailedPost extends React.Component{
     constructor(props){
         super(props)
     }
 
     render(){
         return(
-            <div >
+            <div>
                 <h1>Job Title </h1>
                 <h3>User Profile Name + Link to Page</h3>
                 <h5>Request Amount: $100</h5>
