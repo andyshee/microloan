@@ -1,5 +1,7 @@
 import React from 'react';
-import Card from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
+import {Image} from 'react-bootstrap'
+import myimg from "../assets/IMG_4243c.jpg"
 
 export default class Feeditem extends React.Component{
     constructor(props){
@@ -11,8 +13,9 @@ export default class Feeditem extends React.Component{
             <Card>
                 <Card.Header> Job Title</Card.Header>
                 <Card.Body>
-                    <Card.Text> Job Description </Card.Text>
-                    <Card.Img src= "IMG_4243c.jpg"></Card.Img>
+                    <Card.Text> Amount + beginning description</Card.Text>
+                    <Card.Img src={myimg}></Card.Img>
+                    <Image src={"../assets/IMG_4243c.jpg"}/>
                 </Card.Body>
             </Card>
             
