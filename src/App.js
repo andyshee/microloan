@@ -14,6 +14,7 @@ import Login from './pages/login'
 import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
 import firebase from "firebase/app";
+import Profile from './pages/Profile'
 
 export default class App extends Component {
 
@@ -61,9 +62,6 @@ export default class App extends Component {
 
 }
 
-function Profile() {
-  return <p>profile</p>;
-}
 
 function Messages() {
   return <p>messages</p>
