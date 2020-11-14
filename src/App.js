@@ -87,13 +87,8 @@ export default class App extends Component {
           <Route path="/login">
             <Login />
           </Route>
-<<<<<<< HEAD
-        <Route path="/createrequest">
-          <VolunteerRequest />
-=======
           <Route path="/create-job">
             <VolunteerRequest />
->>>>>>> 4e93b54a30d73d1e3e0fcb0596690b6ad02c54b5
           </Route>
           <Route path="/">
             <HomePage />
