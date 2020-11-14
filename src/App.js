@@ -8,28 +8,34 @@ import {
   Link
 } from "react-router-dom"
 import HomePage from './pages/HomePage';
-import api from './api/api';
+import api from './services/api/api';
 //page imports
 import Login from './pages/login'
 import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
+import firebase from "firebase/app";
 
 export default class App extends Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      user: null,
+    };
   }
   componentDidMount() {
-    api.get('')
-      .then(res => {
-        const text = res.data;
-        console.log(text);
-      }).catch(err => {
-        console.log(err);
-      })
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        console.log('user is signed in');
+      } else {
+        console.log('user is not signed in');
+      }
+    })
   }
 
   render() {
+    if (this.state.user) return <Profile />
     return (
       <Router>
         <MyNavbar />
