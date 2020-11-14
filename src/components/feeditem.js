@@ -10,7 +10,7 @@ export default class Feeditem extends React.Component{
 
     render(){
         return (
-            <Card >
+            <Card>
                 <Card.Header> Job Title</Card.Header>
                 <Card.Body>
                     <Card.Text> Amount + beginning description</Card.Text>
