@@ -14,6 +14,7 @@ import config from "./firebaseConfig"
 // Add the Firebase services that you want to use
 import "firebase/auth";
 import "firebase/firestore";
+import { HomePage } from './pages/HomePage';
 
 // Initialize Firebase
 firebase.initializeApp(config);
@@ -64,7 +65,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/">
-            <Home />
+            <HomePage />
           </Route>
         </Switch>
       </div>
@@ -82,10 +83,6 @@ function Messages() {
 
 function Login() {
   return <p>login</p>
-}
-
-function Home() {
-  return <p>homepage!</p>
 }
 
 export default App;
