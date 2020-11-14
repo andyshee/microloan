@@ -1,6 +1,8 @@
 import React from 'react'
 import './Profile.css'
 import {Image, EnvelopeFill} from 'react-bootstrap'
+import VolunteerRequest from './VolunteerRequest'
+import {Link} from 'react-router-dom'
 
 import profpic from '../assets/profile-pic-icon-square.png'
 
@@ -36,6 +38,7 @@ export default class Profile extends React.Component{
                         <div className= "requests">
                             <h3>My Requests</h3>
                         </div>
+                        <p><Link to='/create-job'>New Request</Link></p>
                     </div>
                     <div className = "sub-box">
                         <div className= "account-info">
@@ -48,3 +51,4 @@ export default class Profile extends React.Component{
 
     }
 }
+<p><a href='/create-job'> Create New Post</a></p>
