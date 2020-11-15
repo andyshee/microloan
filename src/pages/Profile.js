@@ -1,7 +1,7 @@
 import React from 'react'
 import './Profile.css'
 import {Image, EnvelopeFill, Card, Button} from 'react-bootstrap'
-import RequestJobForm from './RequestJobForm'
+import JobForm from './JobForm'
 import {Link} from 'react-router-dom'
 import { PencilSquare } from 'react-bootstrap-icons';
 
@@ -54,35 +54,6 @@ export default class Profile extends React.Component{
                     </Card.Body>
                 </Card>
             </div>
-            // <div className= "grid-container">
-            //     <div className="header-box">
-            //         <div className= "profile-pic">
-            //             <Image src={profpic} roundedCircle/>
-            //         </div>
-            //         <div className = "name-box">
-            //             <h1>Connor "Sexy" Boham</h1>
-            //             <h5>CBoHAM@stud.net</h5>
-            //         </div>
-            //     </div>
-            //     <div className= "body-box">
-            //         <div className = "sub-box">
-            //             <div className= "sponosorships">
-            //                 <h3>My Sponosorships</h3>
-            //             </div>
-            //         </div>
-            //         <div className = "sub-box">
-            //             <div className= "requests">
-            //                 <h3>My Requests</h3>
-            //             </div>
-            //             <p><Link to='/create-job'>New Request</Link></p>
-            //         </div>
-            //         <div className = "sub-box">
-            //             <div className= "account-info">
-            //                 <h3>My Info</h3>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div>
         );
 
     }

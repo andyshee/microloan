@@ -15,7 +15,7 @@ import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
 import firebase from "firebase/app";
 import Profile from './pages/Profile'
-import RequestJobForm from './pages/RequestJobForm';
+import JobForm from './pages/JobForm';
 import Messages from './pages/Messages';
 import UpdateProfile from './pages/UpdateProfile'
 
@@ -81,7 +81,7 @@ export default class App extends Component {
             <Login />
           </Route>
           <Route path="/create-job">
-            <RequestJobForm />
+            <JobForm />
           </Route>
           <Route path="/update-profile">
             <UpdateProfile />

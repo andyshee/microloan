@@ -1,13 +1,13 @@
 import api from './api'
 
 
- export const requestJobForm = (form) => {
+ export const postJob = (form) => {
 
-    
-    api.post('/request-job-form', form)
+    api.post('/post-job', form)
         .then((res)=> console.log(res))
         .catch((err)=> console.log(err))
-    
 
 }
+
+
 

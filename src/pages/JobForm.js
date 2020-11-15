@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
-import './RequestJobForm.css'
-import {requestJobForm} from '../services/api/requestJobForm'
+import './JobForm.css'
+import {postJob} from '../services/api/jobservice'
 
-export default class RequestJobForm extends React.Component {
+export default class JobForm extends React.Component {
     constructor(props) {
         super(props);
 
@@ -18,7 +18,7 @@ export default class RequestJobForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        requestJobForm(this.state)  
+        postJob(this.state)  
     };
 
     handleChange =  (event) => {
