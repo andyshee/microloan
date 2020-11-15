@@ -19,11 +19,11 @@ export default class FeedItem extends React.Component {
         return (
             <div style={{padding: '.75rem .75rem 0'}}>
                 <Card className={this.props.isSelected ? 'green-border' : null}>
-                    <Card.Header> {p.title} </Card.Header>
+                    <Card.Header> {p.postTitle} </Card.Header>
                     <Card.Body className="less-pad-card">
                         <img src={pfp2} className="user" ></img>
                         <div className="supporting-text">
-                            <span className="helper-name">{p.name} &bull; Nov 16 &bull; {this.numToHrsString(p.activityLength)}</span>
+                            <span className="helper-name"> Timmy Turner &bull; Nov 20 &bull; ~3 Hours</span>
                             <span className="description">{p.description}</span>
                         </div>
                     </Card.Body>
@@ -32,3 +32,4 @@ export default class FeedItem extends React.Component {
         );
     }
 }
+//<span className="helper-name">{p.name} &bull; Nov 16 &bull; {this.numToHrsString(p.activityLength)}</span>

@@ -21,5 +21,9 @@ export const postJob = (form) => {
 
 }
 
+export const getOpenJobs = () =>{
+    return api.get('/job-forms');
+}
+
 
 

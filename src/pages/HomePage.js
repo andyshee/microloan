@@ -1,10 +1,9 @@
 import React from 'react';
-import Listitem from '../components/listitem'
 import Detaileditem from '../components/DetailedPost'
 import './HomePage.css'
 import FeedItem from '../components/FeedItem';
-import api from '../services/api/api';
 import { Button, Modal } from 'react-bootstrap';
+import { getOpenJobs } from '../services/api/jobService';
 
 
 export default class HomePage extends React.Component {
@@ -12,8 +11,7 @@ export default class HomePage extends React.Component {
         super(props);
         this.state = {
             posts: [],
-            selectedPost: null,
-            pledge: 1
+            selectedPost: null
         }
 
         this.setPost = this.setPost.bind(this);
@@ -21,18 +19,8 @@ export default class HomePage extends React.Component {
 
     componentDidMount() {
         this.setState({ posts: this.getFakePosts() });
-
-        // api.get('openoffers').then(jobs => {
-        //     this.setState({posts: jobs.data.offers});
-        // });
-    }
-
-    getRealPosts() {
-        //working get request
-        var openjobs;
-        openjobs = api.get('openoffers').then(jobs => {
-            return jobs.data.offers
-        });
+        
+        this.populatePosts();
     }
 
     getFakePosts() {
@@ -59,36 +47,47 @@ export default class HomePage extends React.Component {
         this.setState({pledge: null});
     }
 
-    submitPledge() {
-
+    populatePosts(){
+        var processedPosts =[];
+        getOpenJobs().then( res => {
+            var openJobs = res.data;
+            var date;
+            var holder;
+            var dateObj;
+            for(let i =0; i<25 && i<openJobs.length-1; i++){
+                dateObj = new Date(1605414226)
+                date = ""+ dateObj.getMonth()+ " "+dateObj.getDate()
+                holder = {
+                    postTitle: openJobs[i].postTitle,
+                    description: openJobs[i].description,
+                    targetDate: date,
+                    activityLength: 4,
+                    name: 'John Doe'
+                };
+                processedPosts.push(holder);
+            }
+            console.log(processedPosts)
+            this.setState({posts: processedPosts})
+            console.log("openJobs:"+ openJobs)
+            console.log(this.state)
+        }).catch( err => {
+            console.log(err)
+        })
+        
     }
 
     render() {
+        
         const selectedId = this.state.selectedPost && this.state.selectedPost.id;
-
-        return <div className="home-container">
+        return <div  className="home-container">
             <div className="sidebar scrolly">
                 {this.state.posts.map(p =>
                     <div key={p.id} onClick={() => this.setPost(p)} style={{ cursor: 'pointer' }}>
-                        <FeedItem post={p} isSelected={p.id === selectedId} />
+                        <FeedItem  post={p} isSelected={p.id === selectedId} />
                     </div>
                 )}
             </div>
             <div className="maincontent scrolly"><Detaileditem post={this.state.selectedPost} /></div>
-            <Modal show={this.state.pledge} onHide={() => this.handleClose()}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => this.handleClose()}>
-                        Close
-                    </Button>
-                    <Button variant="success" onClick={() => this.submitPledge()}>
-                        Pledge
-                    </Button>
-                </Modal.Footer>
-            </Modal>
         </div>;
     }
 }
