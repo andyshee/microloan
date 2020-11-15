@@ -15,7 +15,10 @@ import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
 import firebase from "firebase/app";
 import Profile from './pages/Profile'
-import VolunteerRequest from './pages/VolunteerRequest'
+import RequestJobForm from './pages/RequestJobForm';
+import Messages from './pages/Messages';
+import UpdateProfile from './pages/UpdateProfile'
+
 
 export default class App extends Component {
 
@@ -34,16 +37,23 @@ export default class App extends Component {
         this.setState({
           user: user
         })
-        console.log(this.state);
+        console.log(user);
       } else {
         console.log('user is not signed in');
       }
     })
+    //import api
+    //make your call
 
     // //working get request
     // var openjobs;
     // openjobs = api.get('openoffers').then(jobs => console.log(jobs));
+
+    // api.post('/submit-job-form', { name: "Chris", lname: "Piserchia" })
+    //   .then((res) => console.log(res))
+    //   .catch((err) => console.log(err))
   }
+
   handleSignOut() {
     firebase.auth().signOut().then(() => {
       console.log('Sign out successful');
@@ -59,7 +69,7 @@ export default class App extends Component {
         <MyNavbar user={this.state.user} signOut={this.handleSignOut} />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        
+
         <Switch>
           <Route path="/profile">
             <Profile user={this.state.user} />
@@ -70,8 +80,11 @@ export default class App extends Component {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/createrequest">
-            <VolunteerRequest/>
+          <Route path="/create-job">
+            <RequestJobForm />
+          </Route>
+          <Route path="/update-profile">
+            <UpdateProfile />
           </Route>
           <Route path="/">
             <HomePage />
@@ -82,8 +95,3 @@ export default class App extends Component {
   }
 
 }
-
-function Messages() {
-  return <p>messages</p>
-}
-

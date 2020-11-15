@@ -28,6 +28,7 @@
 
 .description {
     display: block;
+    margin-top: .25rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

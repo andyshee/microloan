@@ -1,3 +1,40 @@
+.profile-container {
+    margin: 1rem;
+}
+
+.half-green-background {
+    background-image: url('../assets/mikhail-vasilyev-m5avYyWJ7Wo-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 180px;
+    position: relative;
+}
+
+.profile-header {
+    margin-top: 222px;
+}
+
+.absolute-pfp {
+    position: absolute;
+    top: 92px;
+    left: 26px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px white solid;
+    background: white;
+}
+
+.profile-button-abs {
+    position: absolute;
+    top: 194px;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* 
+
 .grid-container{
     display:grid;
     outline: 2px red;
@@ -38,4 +75,4 @@
 
 .account-info{
 
-}
+} */
