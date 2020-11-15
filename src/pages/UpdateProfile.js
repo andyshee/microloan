@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
 import {updateProfile} from '../services/api/updateProfile'
+import './UpdateProfile.css'
 
 
 export default class UpdateProfile extends React.Component{
@@ -33,7 +34,7 @@ export default class UpdateProfile extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className= "form-box">
                 <Form>
                     <Form.Group controlId="formPostTitle">
                         <Form.Label>Full name</Form.Label>
