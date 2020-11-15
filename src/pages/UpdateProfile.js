@@ -1,11 +1,10 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
-import {updateProfile} from '../services/api/updateProfile'
-import './UpdateProfile.css'
+import { updateProfile } from '../services/api/profileService'
 
 
-export default class UpdateProfile extends React.Component{
-    constructor(props){
+export default class UpdateProfile extends React.Component {
+    constructor(props) {
         super(props);
 
         this.state = {}
@@ -17,18 +16,18 @@ export default class UpdateProfile extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        updateProfile(this.state)  
+        updateProfile(this.state)
     };
 
-    handleChange =  (event) => {
-         this.setState({
+    handleChange = (event) => {
+        this.setState({
             [event.target.name]: event.target.value
-        })   
+        })
     };
 
     handleFileChange = (event) => {
         const file = event.target.files[0];
-        this.setState({photo: file})
+        this.setState({ photo: file })
     };
 
 
@@ -38,14 +37,14 @@ export default class UpdateProfile extends React.Component{
                 <Form>
                     <Form.Group controlId="formPostTitle">
                         <Form.Label>Full name</Form.Label>
-                        <Form.Control as="textarea" rows={1} onChange={this.handleChange} name="full-name"/>
+                        <Form.Control as="textarea" rows={1} onChange={this.handleChange} name="full-name" />
                     </Form.Group>
                     <Form.Group controlId="formPostTitle">
                         <Form.Label>Phone</Form.Label>
-                        <Form.Control as="textarea" rows={1} onChange={this.handleChange} name="phone-number"/>
+                        <Form.Control as="textarea" rows={1} onChange={this.handleChange} name="phone-number" />
                     </Form.Group>
-                        <Form.Label>Address</Form.Label>
-                        <Form.Control as="textarea" rows={2} onChange={this.handleChange} name="address" />
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control as="textarea" rows={2} onChange={this.handleChange} name="address" />
                     <Form.Group>
                         <label>New Profile Pic</label>
                         <input type="file" name="profile-pic" onChange={this.handleFileChange} />

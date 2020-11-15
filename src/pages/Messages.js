@@ -1,7 +1,7 @@
 import React from 'react';
 import './Messages.css'
 import { ListGroup } from 'react-bootstrap';
-import { sendMessage } from '../services/api/messages';
+import { sendMessage } from '../services/api/messagesService';
 
 export default class Messages extends React.Component {
     constructor(props) {
