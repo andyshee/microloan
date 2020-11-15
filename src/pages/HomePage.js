@@ -4,6 +4,7 @@ import Detaileditem from '../components/DetailedPost'
 import './HomePage.css'
 import FeedItem from '../components/FeedItem';
 import api from '../services/api/api';
+import { Button, Modal } from 'react-bootstrap';
 
 
 export default class HomePage extends React.Component {
@@ -11,7 +12,8 @@ export default class HomePage extends React.Component {
         super(props);
         this.state = {
             posts: [],
-            selectedPost: null
+            selectedPost: null,
+            pledge: 1
         }
 
         this.setPost = this.setPost.bind(this);
@@ -53,6 +55,14 @@ export default class HomePage extends React.Component {
         this.setState({ selectedPost: post });
     }
 
+    handleClose() {
+        this.setState({pledge: null});
+    }
+
+    submitPledge() {
+
+    }
+
     render() {
         const selectedId = this.state.selectedPost && this.state.selectedPost.id;
 
@@ -65,6 +75,20 @@ export default class HomePage extends React.Component {
                 )}
             </div>
             <div className="maincontent scrolly"><Detaileditem post={this.state.selectedPost} /></div>
+            <Modal show={this.state.pledge} onHide={() => this.handleClose()}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => this.handleClose()}>
+                        Close
+                    </Button>
+                    <Button variant="success" onClick={() => this.submitPledge()}>
+                        Pledge
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>;
     }
 }
