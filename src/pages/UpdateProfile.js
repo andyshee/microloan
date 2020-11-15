@@ -31,9 +31,9 @@ export default class UpdateProfile extends React.Component {
     };
 
 
-    render() {
-        return (
-            <div>
+    render(){
+        return(
+            <div className= "form-box">
                 <Form>
                     <Form.Group controlId="formPostTitle">
                         <Form.Label>Full name</Form.Label>
