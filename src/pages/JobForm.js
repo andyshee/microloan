@@ -6,9 +6,9 @@ import { postJob } from '../services/api/jobService'
 export default class JobForm extends React.Component {
     constructor(props) {
         super(props);
-
+        const uid = props.user ? props.user.uid : null;
         this.state = {
-
+            uid: uid
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);

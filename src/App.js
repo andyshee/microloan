@@ -75,19 +75,19 @@ export default class App extends Component {
             <Profile user={this.state.user} />
           </Route>
           <Route path="/messages">
-            <Messages />
+            <Messages user={this.state.user} />
           </Route>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/create-job">
-            <JobForm />
+            <JobForm user={this.state.user} />
           </Route>
           <Route path="/update-profile">
-            <UpdateProfile />
+            <UpdateProfile user={this.state.user} />
           </Route>
           <Route path="/">
-            <HomePage />
+            <HomePage user={this.state.user} />
           </Route>
         </Switch>
       </Router >
