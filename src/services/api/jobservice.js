@@ -9,5 +9,9 @@ import api from './api'
 
 }
 
+export const getOpenJobs = () =>{
+    return api.get('/job-forms');
+}
+
 
 
