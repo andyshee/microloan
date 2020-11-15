@@ -17,6 +17,7 @@ import firebase from "firebase/app";
 import Profile from './pages/Profile'
 import RequestJobForm from './pages/RequestJobForm';
 import Messages from './pages/Messages';
+import UpdateProfile from './pages/UpdateProfile'
 
 
 export default class App extends Component {
@@ -36,30 +37,21 @@ export default class App extends Component {
         this.setState({
           user: user
         })
-        console.log(this.state);
+        console.log(user);
       } else {
         console.log('user is not signed in');
       }
     })
     //import api
-    //make your call:
-    const promise = api.get('/messages');
-    // upon a successful call, run a callback
-    promise.then((obj) => {
-      console.log(obj.data);
-      console.log('success')
-    })
-    promise.catch(err => {
-      console.log(err);
-    })
+    //make your call
 
     // //working get request
     // var openjobs;
     // openjobs = api.get('openoffers').then(jobs => console.log(jobs));
 
-    api.post('/submit-job-form', { name: "Chris", lname: "Piserchia" })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err))
+    // api.post('/submit-job-form', { name: "Chris", lname: "Piserchia" })
+    //   .then((res) => console.log(res))
+    //   .catch((err) => console.log(err))
   }
 
   handleSignOut() {
@@ -90,6 +82,9 @@ export default class App extends Component {
           </Route>
           <Route path="/create-job">
             <RequestJobForm />
+          </Route>
+          <Route path="/update-profile">
+            <UpdateProfile />
           </Route>
           <Route path="/">
             <HomePage />

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
+import {updateProfile} from '../services/api/updateProfile'
+
 
 export default class UpdateProfile extends React.Component{
     constructor(props){
@@ -14,7 +16,7 @@ export default class UpdateProfile extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        submitJobForm(this.state)  
+        updateProfile(this.state)  
     };
 
     handleChange =  (event) => {
@@ -34,14 +36,18 @@ export default class UpdateProfile extends React.Component{
             <div>
                 <Form>
                     <Form.Group controlId="formPostTitle">
+                        <Form.Label>Full name</Form.Label>
+                        <Form.Control as="textarea" rows={1} onChange={this.handleChange} name="full-name"/>
+                    </Form.Group>
+                    <Form.Group controlId="formPostTitle">
                         <Form.Label>Phone</Form.Label>
                         <Form.Control as="textarea" rows={1} onChange={this.handleChange} name="phone-number"/>
                     </Form.Group>
                         <Form.Label>Address</Form.Label>
                         <Form.Control as="textarea" rows={2} onChange={this.handleChange} name="address" />
                     <Form.Group>
-                        <label>Choose photo to upload</label>
-                        <input type="file" name="photo" onChange={this.handleFileChange} />
+                        <label>New Profile Pic</label>
+                        <input type="file" name="profile-pic" onChange={this.handleFileChange} />
                     </Form.Group>
                     <Button onClick={this.handleSubmit} type="submit"> Submit</Button>
                 </Form>
