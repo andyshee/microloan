@@ -1,7 +1,7 @@
 import React from 'react'
 import './Profile.css'
 import {Image, EnvelopeFill} from 'react-bootstrap'
-import VolunteerRequest from './VolunteerRequest'
+import RequestJobForm from './RequestJobForm'
 import {Link} from 'react-router-dom'
 
 import profpic from '../assets/profile-pic-icon-square.png'

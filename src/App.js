@@ -15,8 +15,9 @@ import Home from './pages/HomePage'
 import MyNavbar from './components/navbar';
 import firebase from "firebase/app";
 import Profile from './pages/Profile'
-import VolunteerRequest from './pages/VolunteerRequest';
+import RequestJobForm from './pages/RequestJobForm';
 import Messages from './pages/Messages';
+
 
 export default class App extends Component {
 
@@ -88,7 +89,7 @@ export default class App extends Component {
             <Login />
           </Route>
           <Route path="/create-job">
-            <VolunteerRequest />
+            <RequestJobForm />
           </Route>
           <Route path="/">
             <HomePage />
