@@ -1,11 +1,19 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
-// import { Image } from 'react-bootstrap'
-// import myimg from "../assets/IMG_4243c.jpg"
+import {Button} from 'react-bootstrap'
+import {Image} from 'react-bootstrap'
+import myimg from "../assets/IMG_4243c.jpg"
+import api from '../services/api/api';
 import './DetailedPost.css'
 import pfp2 from '../assets/opulent-profile-square-07.jpg'
+import firebase from "firebase/app";
 
 export default class DetailedPost extends React.Component {
+
+    state = {
+        sponsorButtonText: "Sponsor Me",
+        sponsorButtonColor: "#ffffff",
+        sponsorButtonTextColor: "#28a745"
+    }
 
     numToHrsString(num) {
         const newNum = (Math.round(num * 4) / 4);
@@ -24,7 +32,20 @@ export default class DetailedPost extends React.Component {
         }
     }
 
-    render() {
+    assignSponsor(job) {
+        api.post('/assign-sponsor', {job: job, user: firebase.auth().currentUser});
+        this.setState( { sponsorButtonText: "Sponsored!"});
+        this.setState( {sponsorButtonColor : "#28a745"})
+        this.setState( {sponsorButtonTextColor : "white"})
+
+        return;
+    }
+
+    messageMe(){
+        console.log("message me"); 
+    }
+
+    render(){
         const post = this.props.post;
         if (!post) return (<h3>Please select a post.</h3>);
         return (
@@ -38,8 +59,8 @@ export default class DetailedPost extends React.Component {
                 </div>
                 <div style={{marginTop: '.75rem'}}> {post.description} </div>
                 <div className="space-around-full">
-                    <Button variant="outline-success">Message Me</Button>
-                    <Button variant="outline-success" style={{ marginLeft: '1rem' }}>Sponsor Me</Button>
+                    <Button variant="outline-success" onClick={this.assignSponsor.bind(this)}>Message Me</Button>
+                    <Button variant="outline-success" onClick={this.assignSponsor.bind(this, post)} style={{ marginLeft: '1rem', backgroundColor: this.state.sponsorButtonColor, color: this.state.sponsorButtonTextColor }}>{this.state.sponsorButtonText}</Button>
                 </div>
             </div>
         );
