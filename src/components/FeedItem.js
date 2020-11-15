@@ -25,6 +25,7 @@ export default class FeedItem extends React.Component {
                         <div className="supporting-text">
                             <span className="helper-name"> Timmy Turner &bull; Nov 20 &bull; ~3 Hours</span>
                             <span className="description">{p.description}</span>
+                            <span className="posted-date">Posted on {p.dateCreated}</span>
                         </div>
                     </Card.Body>
                 </Card>
