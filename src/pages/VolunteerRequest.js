@@ -14,22 +14,15 @@ export default class VolunteerRequest extends React.Component {
 
     }
 
-    formData = {
-        title: "",
-        description: ""
-    }
-
-
     handleSubmit = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
 
     }
 
     handleChange = async (event) => {
-        await this.setState({
+        this.setState({
             [event.target.name]: event.target.value
         });
-        console.log(this.state);
     }
 
     handleFileChange = (event) => {

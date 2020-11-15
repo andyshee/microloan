@@ -12,7 +12,7 @@ export default class Messages extends React.Component {
                     messages: [
                         {
                             sent: true,
-                            msg: 'hello',
+                            msg: 'hey how have you been? Ive been looking for a great service opportunity and would love to blah blah blah',
                         },
                         {
                             sent: false,
@@ -45,7 +45,8 @@ export default class Messages extends React.Component {
                 }
 
             ],
-            selected: 0
+            selected: null,
+            message: ""
         }
 
         this.renderChats = this.renderChats.bind(this);
@@ -55,7 +56,6 @@ export default class Messages extends React.Component {
     }
 
     handleClick = async (index) => {
-        // e.preventDefault();
         this.setState({
             selected: index
         });
@@ -74,10 +74,15 @@ export default class Messages extends React.Component {
         return openMessages;
     }
 
+    handleMessageChange = (event) => {
+        this.setState({
+            message: event.target.value
+        })
+    }
+
     renderMsgs = () => {
         if (this.state.selected != null) {
             const chat = this.state.chats[this.state.selected];
-            const name = chat.name;
             const msgs = chat.messages;
             console.log(msgs);
             return msgs.map((value, index) => {
@@ -92,8 +97,11 @@ export default class Messages extends React.Component {
     }
 
     renderName = () => {
-        if (this.state.selected == null) return '';
-        return this.state.chats[this.state.selected].name;
+        if (this.state.selected != null) {
+            return <h1>{this.state.chats[this.state.selected].name}</h1>;
+        } else {
+            return null;
+        }
     }
 
     render() {
@@ -105,8 +113,9 @@ export default class Messages extends React.Component {
                     </ListGroup>
                 </div>
                 <div className="chat">
-                    <h1>{this.renderName()}</h1>
+                    {this.renderName()}
                     {this.renderMsgs()}
+                    <input type="text" onChange={this.handleMessageChange}></input>
                 </div>
             </div>
         );
