@@ -18,9 +18,7 @@ export default class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({posts: this.getFakePosts()})
-        }, 300);
+        this.setState({ posts: this.getFakePosts() });
 
         // api.get('openoffers').then(jobs => {
         //     this.setState({posts: jobs.data.offers});
@@ -31,7 +29,8 @@ export default class HomePage extends React.Component {
         //working get request
         var openjobs;
         openjobs = api.get('openoffers').then(jobs => {
-            return jobs.data.offers});
+            return jobs.data.offers
+        });
     }
 
     getFakePosts() {
@@ -51,7 +50,7 @@ export default class HomePage extends React.Component {
     }
 
     setPost(post) {
-        this.setState({selectedPost: post});
+        this.setState({ selectedPost: post });
     }
 
     render() {
@@ -59,8 +58,8 @@ export default class HomePage extends React.Component {
 
         return <div className="home-container">
             <div className="sidebar scrolly">
-                {this.state.posts.map(p => 
-                    <div key={p.id} onClick={() => this.setPost(p)} style={{cursor: 'pointer'}}>
+                {this.state.posts.map(p =>
+                    <div key={p.id} onClick={() => this.setPost(p)} style={{ cursor: 'pointer' }}>
                         <FeedItem post={p} isSelected={p.id === selectedId} />
                     </div>
                 )}

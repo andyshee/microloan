@@ -36,7 +36,7 @@ export default class DetailedPost extends React.Component {
                     <h4 style={{ margin: 0, marginLeft: '.75rem' }}> {post.name} </h4>
                     <Button variant="outline-success" size="sm" style={{ marginLeft: '.75rem' }}>View Profile</Button>
                 </div>
-                <div style={{marginTop: '1rem'}}> {post.description} </div>
+                <div style={{marginTop: '.75rem'}}> {post.description} </div>
                 <div className="space-around-full">
                     <Button variant="outline-success">Message Me</Button>
                     <Button variant="outline-success" style={{ marginLeft: '1rem' }}>Sponsor Me</Button>
