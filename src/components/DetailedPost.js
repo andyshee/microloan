@@ -1,23 +1,27 @@
 import React from 'react'
-import {Button} from 'react-bootstrap'
-import {Image} from 'react-bootstrap'
-import myimg from "../assets/IMG_4243c.jpg"
+import { Button } from 'react-bootstrap'
+// import { Image } from 'react-bootstrap'
+// import myimg from "../assets/IMG_4243c.jpg"
+import './DetailedPost.css'
+import pfp2 from '../assets/opulent-profile-square-07.jpg'
 
-export default class DetailedPost extends React.Component{
-    constructor(props){
-        super(props)
-    }
+export default class DetailedPost extends React.Component {
 
-    render(){
+    render() {
         const post = this.props.post;
         if (!post) return (<h3>Please select a post.</h3>);
-        return(
+        return (
             <div>
                 <h1>{post.title}</h1>
-                <a href="/" className="username-linked"> {post.name} </a>
+                <div className="flex-div">
+                    <img src={pfp2} className="user" ></img>
+                    <h4 style={{marginLeft: '1rem'}}> {post.name} </h4>
+                </div>
                 <div> {post.description} </div>
-                <Button variant="Link">Message Me</Button>
-                <Button variant="Link">Sponsor Me</Button>
+                <div className="space-around-full">
+                    <Button variant="outline-success">Message Me</Button>
+                    <Button variant="outline-success" style={{ marginLeft: '1rem' }}>Sponsor Me</Button>
+                </div>
             </div>
         );
     }

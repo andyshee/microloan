@@ -1,0 +1,11 @@
+.space-around-full {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.flex-div {
+    display: flex;
+    align-items: center;
+}
