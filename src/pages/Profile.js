@@ -38,6 +38,7 @@ export default class Profile extends React.Component{
                 <Card style={{marginTop: '1.25rem'}}>
                     <Card.Header>
                         <h5 style={{margin: 0}}>Active Service Events</h5>
+                        <Link to= '/create-job'><h7 style={{display:'inline-block', position:'relative', float:'right'}}> Add A new Post</h7></Link>
                     </Card.Header>
                     <Card.Body>
                         This user currently has no active service events.
