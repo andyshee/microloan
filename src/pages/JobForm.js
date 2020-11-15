@@ -48,7 +48,7 @@ export default class JobForm extends React.Component {
                     </Form.Group>
                     <Form.Group controlId="formImage">
                         <label>Choose photo to upload</label>
-                        <input type="file" name="photo" onChange={this.handleFileChange} />
+                        <input id="file-input" type="file" name="photo" onChange={this.handleFileChange} />
                     </Form.Group>
                     <Button onClick={this.handleSubmit} type="submit"> Submit</Button>
                 </Form>
