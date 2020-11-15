@@ -1,6 +1,7 @@
 import React from 'react';
 import './Messages.css'
 import { ListGroup } from 'react-bootstrap';
+import { sendMessage } from '../services/api/messages';
 
 export default class Messages extends React.Component {
     constructor(props) {
@@ -46,13 +47,14 @@ export default class Messages extends React.Component {
 
             ],
             selected: null,
-            message: ""
+            msgToSend: ""
         }
 
         this.renderChats = this.renderChats.bind(this);
         this.renderMsgs = this.renderMsgs.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.renderName = this.renderName.bind(this);
+        this.handleKeystrokeEnter = this.handleKeystrokeEnter.bind(this);
     }
 
     handleClick = async (index) => {
@@ -74,9 +76,24 @@ export default class Messages extends React.Component {
         return openMessages;
     }
 
+    handleKeystrokeEnter = (event) => {
+        if (event.key === 'Enter') {
+            const msg = this.state.msgToSend;
+            // do something w this
+
+            this.sendMessage(msg);
+            // send user data as well.
+
+            this.setState({
+                msgToSend: ""
+            })
+        }
+    }
+
     handleMessageChange = (event) => {
+        if (event.key === 'Enter') return;
         this.setState({
-            message: event.target.value
+            msgToSend: event.target.value
         })
     }
 
@@ -84,7 +101,7 @@ export default class Messages extends React.Component {
         if (this.state.selected != null) {
             const chat = this.state.chats[this.state.selected];
             const msgs = chat.messages;
-            console.log(msgs);
+            //console.log(msgs);
             return msgs.map((value, index) => {
                 return <div className={value.sent ? 'right primary' : 'left primary'} key={index}>
                     {value.msg}
@@ -92,7 +109,7 @@ export default class Messages extends React.Component {
             })
 
         } else {
-            return 'Select a message';
+            return '';
         }
     }
 
@@ -102,6 +119,17 @@ export default class Messages extends React.Component {
         } else {
             return null;
         }
+    }
+
+    renderMsgInput = () => {
+        const active = this.state.selected != null;
+        return <input
+            type="text"
+            value={this.state.msgToSend}
+            onChange={this.handleMessageChange}
+            onKeyPress={this.handleKeystrokeEnter}
+            disabled={!active}
+        ></input>
     }
 
     render() {
@@ -115,7 +143,7 @@ export default class Messages extends React.Component {
                 <div className="chat">
                     {this.renderName()}
                     {this.renderMsgs()}
-                    <input type="text" onChange={this.handleMessageChange}></input>
+                    {this.renderMsgInput()}
                 </div>
             </div>
         );
