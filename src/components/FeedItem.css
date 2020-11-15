@@ -11,7 +11,8 @@
 }
 
 .card.green-border {
-    
+    border-color: #28a745;
+    border-width: 3px;
 }
 
 .supporting-text {

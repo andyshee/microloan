@@ -13,3 +13,11 @@
     background-color: #00000030;
     border: 2px solid #55555505;
 }
+
+.circle-40 {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}

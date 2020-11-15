@@ -10,7 +10,7 @@ export default class HomePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: [],
+            posts: this.getFakePosts(),
             selectedPost: null
         }
 
@@ -18,19 +18,13 @@ export default class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            api.get('openoffers').then(jobs => {
-                this.setState({posts: jobs.data.offers});
-            });
-        }, 300);
+        //setting this.posts to open offers from api
+        // api.get('openoffers').then(jobs => {
+        //     this.setState({posts: jobs.data.offers});
+        // });
+        this.posts = this.getFakePosts();
     }
 
-    getRealPosts() {
-        //working get request
-        var openjobs;
-        openjobs = api.get('openoffers').then(jobs => {
-            return jobs.data.offers});
-    }
 
     getFakePosts() {
         const posts = [];
@@ -38,7 +32,7 @@ export default class HomePage extends React.Component {
             const p = {
                 id: i,
                 name: 'John Doe',
-                title: 'Franklin Food Pantry',
+                title: 'Franklin Food Pantry ' + i,
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 targetDate: new Date(),
                 activityLength: 4.5
