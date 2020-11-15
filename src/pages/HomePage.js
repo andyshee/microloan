@@ -11,8 +11,7 @@ export default class HomePage extends React.Component {
         super(props);
         this.state = {
             posts: [],
-            selectedPost: null,
-            pledge: 1
+            selectedPost: null
         }
 
         this.setPost = this.setPost.bind(this);
@@ -89,20 +88,6 @@ export default class HomePage extends React.Component {
                 )}
             </div>
             <div className="maincontent scrolly"><Detaileditem post={this.state.selectedPost} /></div>
-            <Modal show={this.state.pledge} onHide={() => this.handleClose()}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => this.handleClose()}>
-                        Close
-                    </Button>
-                    <Button variant="success" onClick={() => this.submitPledge()}>
-                        Pledge
-                    </Button>
-                </Modal.Footer>
-            </Modal>
         </div>;
     }
 }
