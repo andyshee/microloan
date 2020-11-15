@@ -1,40 +1,36 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
-import './VolunteerRequest.css'
+import './RequestJobForm.css'
+import {requestJobForm} from '../services/api/requestJobForm'
 
-export default class VolunteerRequest extends React.Component {
+export default class RequestJobForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
-
+        this.state = {
+           
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFileChange = this.handleFileChange.bind(this);
 
     }
 
-    formData = {
-        title: "",
-        description: ""
-    }
-
-
     handleSubmit = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
+        requestJobForm(this.state)  
+    };
 
-    }
-
-    handleChange = async (event) => {
-        await this.setState({
+    handleChange =  (event) => {
+         this.setState({
             [event.target.name]: event.target.value
-        });
-        console.log(this.state);
-    }
+        })   
+    };
 
     handleFileChange = (event) => {
         const file = event.target.files[0];
         this.setState({ photo: file })
+        
     };
 
     render() {

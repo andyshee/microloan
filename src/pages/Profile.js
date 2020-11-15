@@ -1,7 +1,7 @@
 import React from 'react'
 import './Profile.css'
 import {Image, EnvelopeFill, Card, Button} from 'react-bootstrap'
-import VolunteerRequest from './VolunteerRequest'
+import RequestJobForm from './RequestJobForm'
 import {Link} from 'react-router-dom'
 import { PencilSquare } from 'react-bootstrap-icons';
 
@@ -17,6 +17,7 @@ export default class Profile extends React.Component{
         }
     }
 
+
     render(){
         return (
             <div className="profile-container">
@@ -29,7 +30,7 @@ export default class Profile extends React.Component{
                     <img src={pfp2} className="absolute-pfp"></img>
                     <div className="profile-button-abs">
                         <Button variant="outline-success">Message Me</Button>
-                        <Button variant="outline-success" style={{marginLeft: '.75rem'}}>Edit Profile</Button>
+                        <Link to='update-profile'><Button variant="outline-success" style={{marginLeft: '.75rem'}}>Edit Profile</Button></Link>
                         {/* <div> <PencilSquare color="#28a745" size={36} /> </div> */}
                     </div>
                 </Card>
