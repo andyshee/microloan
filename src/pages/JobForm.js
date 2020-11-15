@@ -1,14 +1,14 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
-import './RequestJobForm.css'
-import {requestJobForm} from '../services/api/requestJobForm'
+import './JobForm.css'
+import { postJob } from '../services/api/jobService'
 
-export default class RequestJobForm extends React.Component {
+export default class JobForm extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-           
+
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,19 +18,19 @@ export default class RequestJobForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        requestJobForm(this.state)  
+        postJob(this.state)
     };
 
-    handleChange =  (event) => {
-         this.setState({
+    handleChange = (event) => {
+        this.setState({
             [event.target.name]: event.target.value
-        })   
+        })
     };
 
     handleFileChange = (event) => {
         const file = event.target.files[0];
         this.setState({ photo: file })
-        
+
     };
 
     render() {
